@@ -1,5 +1,7 @@
 FROM ubuntu:22.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && \
     apt-get install -y software-properties-common lsb-release && \
     add-apt-repository ppa:ondrej/php -y && \

@@ -1,13 +1,4 @@
 services:
-  web:
-    build: .
-    ports:
-      - "8080:80"
-    volumes:
-      - ./wordpress:/var/www/html
-    depends_on:
-      - db
-
   db:
     image: mariadb:10.5
     restart: always
@@ -23,11 +14,14 @@ services:
     image: wordpress:latest
     depends_on:
       - db
+    ports:
+      - "8080:80"
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_LOCALE: uk
     volumes:
       - ./wordpress:/var/www/html
 

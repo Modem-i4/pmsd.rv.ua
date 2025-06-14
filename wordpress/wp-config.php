@@ -31,6 +31,7 @@ if (!function_exists('getenv_docker')) {
 			return rtrim(file_get_contents($fileEnv), "\r\n");
 		}
 		else if (($val = getenv($env)) !== false) {
+			error_log($val);
 			return $val;
 		}
 		else {
@@ -38,6 +39,11 @@ if (!function_exists('getenv_docker')) {
 		}
 	}
 }
+
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', true);
+
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -48,6 +54,10 @@ define( 'DB_USER', getenv_docker('WORDPRESS_DB_USER', 'example username') );
 
 /** Database password */
 define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', 'example password') );
+
+define('WPLANG', 'uk');
+/** TODO: Remove on prod */
+define('FS_METHOD', 'direct');
 
 /**
  * Docker image fallback values above are sourced from the official WordPress installation wizard:

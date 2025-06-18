@@ -45,5 +45,25 @@ return array(
 		),
 		'editorScript' => 'file:./index.js',
 		'style' => 'file:./style-index.css'
+	),
+	'php-example-block' => array(
+		'apiVersion' => 2,
+		'name' => 'custom-blocks/php-example',
+		'title' => 'PHP Example Block',
+		'description' => 'An example block using PHP.',
+		'category' => 'custom-blocks',
+		'icon' => 'slides',
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'numberOfPosts' => array(
+				'type' => 'number',
+				'default' => 3
+			)
+		),
+		'editorScript' => 'file:./index.js',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php'
 	)
 );

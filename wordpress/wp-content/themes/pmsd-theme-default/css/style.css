@@ -1,1 +1,37 @@
-@import url('/wp-content/themes/pmsd-theme-default/css/header.css');
+@import url("/wp-content/themes/pmsd-theme-default/css/header.css");
+
+html {
+    font-size: 8px;
+}
+
+
+.conteiner {
+	max-width: 1440px !important;
+	min-width: 320px !important;
+    margin: 0 auto !important;
+}
+
+.header__nav__line {
+	background: #e5ffff;
+	height: 21px !important;
+	border-radius: 100px;
+	margin: 0 16px !important;
+}
+.hero-section__wrapper {
+	position: relative;
+	overflow: hidden;
+	margin-top: -50px !important;
+	z-index: -1;
+}
+.hero-section__wrapper::before {
+	content: "";
+	clip-path: polygon(89% 0%, 100% 0, 100% 100%, 0 350%);
+	background-color: #05b6b958;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+}
+
+.address-section__item-location {
+}

@@ -104,6 +104,61 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'style' => 'file:./style-index.css'
 	),
+	'form-checkbox copy' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'parts-blocks/consent-checkbox',
+		'title' => 'Галочка згоди',
+		'category' => 'parts-blocks',
+		'icon' => 'yes-alt',
+		'description' => 'Згода на використання персональних даних.',
+		'supports' => array(
+			'html' => false,
+			'anchor' => false,
+			'typography' => array(
+				'fontSize' => true,
+				'lineHeight' => true,
+				'fontFamily' => true,
+				'fontStyle' => true,
+				'fontWeight' => true,
+				'letterSpacing' => true,
+				'textTransform' => true,
+				'textDecoration' => true
+			),
+			'spacing' => array(
+				'margin' => true,
+				'padding' => true
+			)
+		),
+		'attributes' => array(
+			'labelBefore' => array(
+				'type' => 'string',
+				'default' => 'Я даю згоду на обробку моїх персональних даних для надання відповіді.'
+			),
+			'linkText' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'labelAfter' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'linkUrl' => array(
+				'type' => 'string',
+				'default' => '#'
+			),
+			'isRequired' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'inputName' => array(
+				'type' => 'string',
+				'default' => 'consent'
+			)
+		),
+		'editorScript' => 'file:./index.js',
+		'style' => 'file:./style-index.css'
+	),
 	'form-field' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -149,7 +204,103 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'style' => 'file:./style-index.css'
 	),
+	'form-field copy' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'parts-blocks/form-field',
+		'version' => '0.1.0',
+		'title' => 'Компонент форми',
+		'category' => 'parts-blocks',
+		'icon' => 'feedback',
+		'description' => 'Універсальні елементи форми: input / textarea і тд.',
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'variant' => array(
+				'type' => 'string',
+				'default' => 'input'
+			),
+			'label' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'name' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'placeholder' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'required' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'inputType' => array(
+				'type' => 'string',
+				'default' => 'text'
+			),
+			'rows' => array(
+				'type' => 'number',
+				'default' => 4
+			)
+		),
+		'editorScript' => 'file:./index.js',
+		'style' => 'file:./style-index.css'
+	),
 	'form-submit' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'parts-blocks/form-submit',
+		'version' => '0.1.0',
+		'title' => 'Надсилання форми',
+		'category' => 'parts-blocks',
+		'icon' => 'feedback',
+		'description' => 'Кнопка для надсилання полів з "Компонентів форми"',
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'left',
+				'center',
+				'right'
+			),
+			'spacing' => array(
+				'margin' => true,
+				'padding' => true
+			)
+		),
+		'attributes' => array(
+			'submitText' => array(
+				'type' => 'string',
+				'default' => 'Надіслати'
+			),
+			'scopeClass' => array(
+				'type' => 'string',
+				'default' => '.form-scope'
+			),
+			'action' => array(
+				'type' => 'string',
+				'default' => '/'
+			),
+			'method' => array(
+				'type' => 'string',
+				'default' => 'POST'
+			),
+			'successMessage' => array(
+				'type' => 'string',
+				'default' => 'Форму надіслано успішно.'
+			),
+			'errorMessage' => array(
+				'type' => 'string',
+				'default' => 'Сталася помилка. Спробуйте ще раз.'
+			)
+		),
+		'editorScript' => 'file:./index.js',
+		'viewScript' => 'file:./frontend.js',
+		'style' => 'file:./style-index.css'
+	),
+	'form-submit copy' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'parts-blocks/form-submit',

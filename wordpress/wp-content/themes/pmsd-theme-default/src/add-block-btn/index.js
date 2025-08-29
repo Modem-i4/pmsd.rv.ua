@@ -73,9 +73,10 @@ registerBlockType(metadata.name, {
 
 		const resolveTarget = () => {
 			if (!targetSelector) return { parentId: rootClientId, index: currentIndex + 1 };
-			const el = document.querySelector(targetSelector);
+			const iframe = document.querySelector('iframe[name="editor-canvas"]');
+			const doc = iframe?.contentDocument || document;
+			const el = doc.querySelector(targetSelector);
 			if (!el) return { parentId: rootClientId, index: currentIndex + 1 };
-
 			const host = el.closest('.block-editor-block-list__block');
 			const targetId = host?.dataset?.block;
 			if (!targetId) return { parentId: rootClientId, index: currentIndex + 1 };

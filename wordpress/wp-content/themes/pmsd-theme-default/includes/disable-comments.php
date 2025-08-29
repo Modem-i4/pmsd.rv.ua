@@ -68,6 +68,5 @@ add_action('admin_menu', function () {
     remove_submenu_page('index.php', 'update-core.php');
 
     // Сховати підменю "Категорії" та "Позначки" у "Записах"
-    remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category');
     remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
 }, 999);
